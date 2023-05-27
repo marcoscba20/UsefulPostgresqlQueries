@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE dwh_vtas.sp_dim_vendedor()
+CREATE OR REPLACE PROCEDURE dwh_vtas.sp_dim_vendedores()
 LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -6,7 +6,7 @@ DECLARE
     v_dwh_table text;
 BEGIN
     -- We will insert data into this table of dwh
-    v_dwh_table = 'vendedor';
+    v_dwh_table = 'dim_vendedores';
     -- Set the query to populate the table structure
     v_query := '
         SELECT --TOP 100
@@ -44,4 +44,4 @@ $$;
 
 
 
-call dwh_vtas.sp_dim_vendedor()
+--call dwh_vtas.sp_dim_vendedores()
